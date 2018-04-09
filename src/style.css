@@ -11,3 +11,44 @@ body {
   line-height: 1.4;
   margin: 0;
 }
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  margin: 0;
+}
+h1 {
+  font-size: 1em;
+}
+
+a {
+  color: #FA8763;
+  text-decoration: none;
+}
+a:hover, a:active {
+  color: #ED7A56;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+  padding: 20px;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+header h1 {
+  float: left;
+}
+header svg {
+  float: right;
+}
+
+/* Main */
+main {
+  padding: 62px 20px;
+}
+
+/* Home */
