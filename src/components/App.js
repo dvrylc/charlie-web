@@ -1,11 +1,17 @@
 // External imports
 import React from 'react';
+import { Route } from 'react-router-dom';
+
+// Internal imports
+import Home from './Home';
+import Settings from './Settings';
 
 class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <h1>Charlie</h1>
+        <Route exact path='/' component={ Home }/>
+        <Route exact path='/settings' component={ Settings }/>
       </div>
     );
   }
