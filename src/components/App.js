@@ -16,6 +16,8 @@ class App extends React.Component {
       loading: true,
       data: {}
     }
+
+    this.handleUpdate = this.handleUpdate.bind(this);
   }
 
   componentDidMount() {
@@ -25,6 +27,20 @@ class App extends React.Component {
           loading: false,
           data: r.data
         });
+      })
+      .catch(e => {
+        console.error(e);
+      });
+  }
+
+  handleUpdate(newState) {
+    api.update(newState)
+      .then(r => {
+        this.setState({
+          data: r.data.data
+        });
+
+        alert('Successfully saved.');
       })
       .catch(e => {
         console.error(e);
@@ -42,7 +58,10 @@ class App extends React.Component {
 
         <Route exact path='/' component={ Home }/>
         <Route exact path='/settings' render={ () =>
-          <Settings data={ this.state.data } />
+          <Settings
+            data={ this.state.data }
+            handleUpdate={ this.handleUpdate }
+          />
         } />
       </div>
     );

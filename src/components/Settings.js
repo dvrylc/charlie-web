@@ -7,6 +7,7 @@ class Settings extends React.Component {
     this.state = this.props.data;
 
     this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInput(e) {
@@ -16,6 +17,11 @@ class Settings extends React.Component {
     this.setState({
       [name]: value
     });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.handleUpdate(this.state);
   }
 
   render() {
@@ -44,7 +50,7 @@ class Settings extends React.Component {
         <div>
           <h3>BASIC INFO</h3>
 
-          <form>
+          <form onSubmit={ this.handleSubmit }>
             <table>
               <tbody>
                 <tr>
@@ -60,6 +66,8 @@ class Settings extends React.Component {
                 </tr>
               </tbody>
             </table>
+
+            <input type="submit" value="Save" />
           </form>
         </div>
 

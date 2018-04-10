@@ -15,9 +15,7 @@ const api = {
     return instance.get('/latest');
   },
   update: data => {
-    return instance.put('/', {
-      data: data
-    });
+    return instance.put('/', data);
   }
 }
 
