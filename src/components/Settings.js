@@ -1,5 +1,6 @@
 // External imports
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Settings extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class Settings extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.handleUpdate(this.state);
+    alert('Successfully saved!');
   }
 
   render() {
@@ -79,6 +81,10 @@ class Settings extends React.Component {
               { bookRows }
             </tbody>
           </table>
+
+          <Link to={{ pathname: "/scanner" }}>
+            <button>Scan a new book</button>
+          </Link>
         </div>
       </main>
     );

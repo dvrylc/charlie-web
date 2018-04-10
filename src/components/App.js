@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom';
 import api from '../utilities/api';
 import Header from './Header';
 import Home from './Home';
+import Scanner from './Scanner';
 import Settings from './Settings';
 
 class App extends React.Component {
@@ -28,8 +29,8 @@ class App extends React.Component {
           data: r.data
         });
       })
-      .catch(e => {
-        console.error(e);
+      .catch(err => {
+        console.error(err);
       });
   }
 
@@ -39,11 +40,9 @@ class App extends React.Component {
         this.setState({
           data: r.data.data
         });
-
-        alert('Successfully saved.');
       })
-      .catch(e => {
-        console.error(e);
+      .catch(err => {
+        console.error(err);
       });
   }
 
@@ -59,6 +58,13 @@ class App extends React.Component {
         <Route exact path='/' component={ Home }/>
         <Route exact path='/settings' render={ () =>
           <Settings
+            data={ this.state.data }
+            handleUpdate={ this.handleUpdate }
+          />
+        } />
+
+        <Route exact path='/scanner' render={ () =>
+          <Scanner
             data={ this.state.data }
             handleUpdate={ this.handleUpdate }
           />

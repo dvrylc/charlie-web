@@ -75,6 +75,7 @@ input[type="submit"] {
 /* Header */
 header {
   position: fixed;
+  z-index: 999;
   top: 0;
   left: 0;
   height: auto;
@@ -94,12 +95,6 @@ header svg {
 main {
   padding: 62px 20px;
 }
-main div {
-  margin-bottom: 40px;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0px 5px 25px 0px rgba(0,0,0,0.1);
-}
 
 /* Settings */
 .settings .bookNotActivated {
@@ -107,6 +102,17 @@ main div {
 }
 .settings .bookNotActivated img {
   filter: grayscale(100%);
+}
+.settings div {
+  margin: 40px 0;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0px 5px 25px 0px rgba(0,0,0,0.1);
+}
+
+/* Scanner */
+.scan > section > section > div {
+  box-shadow: #FA8763 0px 0px 0px 2px inset !important;
 }
 
 /* Home */
