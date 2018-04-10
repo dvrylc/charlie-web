@@ -83,17 +83,13 @@ header {
   padding: 20px;
   background: white;
   border-bottom: 1px solid #eee;
+  text-align: center;
 }
-header h1 {
-  float: left;
-}
-header svg {
-  float: right;
-}
+
 
 /* Main */
 main {
-  padding: 62px 20px;
+  padding: 62px 20px 20px;
 }
 
 /* Settings */

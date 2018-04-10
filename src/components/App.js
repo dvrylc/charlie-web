@@ -5,7 +5,6 @@ import { Route } from 'react-router-dom';
 // Internal imports
 import api from '../utilities/api';
 import Header from './Header';
-import Home from './Home';
 import Scanner from './Scanner';
 import Settings from './Settings';
 
@@ -55,8 +54,7 @@ class App extends React.Component {
       <div className="app">
         <Header />
 
-        <Route exact path='/' component={ Home }/>
-        <Route exact path='/settings' render={ () =>
+        <Route exact path='/' render={ () =>
           <Settings
             data={ this.state.data }
             handleUpdate={ this.handleUpdate }
