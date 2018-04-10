@@ -21,7 +21,9 @@ class Scanner extends React.Component {
         this.props.handleUpdate(newState);
 
         alert(`Sucessfully activated book ${id}!`);
-        window.location.href = '/';
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 1000);
       }
     }
   }

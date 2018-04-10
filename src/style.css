@@ -71,6 +71,9 @@ input[type="submit"] {
   padding: 10px;
   border: 1px solid #eee;
 }
+button:not(:last-child) {
+  margin-bottom: 20px;
+}
 
 /* Header */
 header {

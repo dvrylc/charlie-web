@@ -9,6 +9,7 @@ class Settings extends React.Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.resetBooks = this.resetBooks.bind(this);
   }
 
   handleInput(e) {
@@ -24,6 +25,17 @@ class Settings extends React.Component {
     e.preventDefault();
     this.props.handleUpdate(this.state);
     alert('Successfully saved!');
+  }
+
+  resetBooks() {
+    let newState = this.state;
+
+    newState.books.forEach((_, i) => {
+      newState.books[i].isActivated = false
+    });
+
+    this.props.handleUpdate(newState);
+    alert('Successfully reset!');
   }
 
   render() {
@@ -82,8 +94,10 @@ class Settings extends React.Component {
             </tbody>
           </table>
 
+          <button onClick={ this.resetBooks }>Reset books</button>
+
           <Link to={{ pathname: "/scanner" }}>
-            <button>Scan a new book</button>
+            <button type="button">Scan a new book</button>
           </Link>
         </div>
       </main>
